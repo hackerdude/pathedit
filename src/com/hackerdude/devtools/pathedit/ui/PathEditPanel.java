@@ -231,7 +231,7 @@ public class PathEditPanel extends JPanel {
   void btnOpen_actionPerformed(ActionEvent e) {
       makeFileChooser();
       fd.setVisible(true);
-      if ( fd.showOpenDialog(this) == fd.APPROVE_OPTION ) {
+      if ( fd.showOpenDialog(this) == JFileChooser.APPROVE_OPTION ) {
     try {
       PathEditFileEditor newFile = new PathEditFileEditor();
       newFile.fileName = fd.getSelectedFile().getAbsoluteFile().getAbsolutePath();
@@ -250,7 +250,7 @@ public class PathEditPanel extends JPanel {
      makeFileChooser();
      try {
        if ( currentFile.fileName == null ) {
-         if ( fd.showSaveDialog(this) == fd.APPROVE_OPTION )
+         if ( fd.showSaveDialog(this) == JFileChooser.APPROVE_OPTION )
            currentFile.fileName = fd.getSelectedFile().getAbsoluteFile().getAbsolutePath();
        }
        if ( currentFile.fileName != null ) {
