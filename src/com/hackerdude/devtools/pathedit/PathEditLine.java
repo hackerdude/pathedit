@@ -26,6 +26,7 @@ public class PathEditLine {
 
   /**
    * Creates a new PathEditLine with the incoming line as constructor.
+   * @param line The line to interepret as a path.
    */
   public PathEditLine(String line) {
     this.line = line;
@@ -44,13 +45,19 @@ public class PathEditLine {
     return thePath.varName;
   }
 
-  public void setVarName(String path) {
-    thePath.varName = path;
+  /**
+   * Changes the variable name for this line.
+   * 
+   * @param varName The new variable name
+   */
+  public void setVarName(String varName) {
+    thePath.varName = varName;
   }
 
 
   /**
    * Returns a PathEditList that contains the path elements.
+   * @return The patheditList item with the path elements.
    */
   public PathEditList getPath() {
     return thePath;
@@ -65,6 +72,9 @@ public class PathEditLine {
     return result;
   }
 
+  /**
+   * Returns the path as a string, or the line if it is not a path.
+   */
   public String toString() {
     if ( thePath != null ) {
       return thePath.toString();
