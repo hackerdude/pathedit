@@ -9,7 +9,7 @@
 	<!-- Set some basic values locations -->
 	<property name="Name" value="pathedit"/>
 	<property name="name" value="pathedit"/>
-	<property name="version" value="0.0.12"/>
+	<property name="pathedit.version" value="0.0.12"/>
 
 	<!-- Set some basic directory locations -->
 	<property name="pathedit.home" value="."/>
@@ -33,8 +33,7 @@
 
 	<property name="packages" value="com.hackerdude.*"/>
 	<property name="manifest" value="${src.dir}/META-INF/MANIFEST.MF"/>
-	<property name="build.compiler" value="classic"/>
-	<property name="build.compiler.emacs" value="on"/>
+
 	<!-- =================================================================== -->
 	<!-- Define a global set of patterns that can be referenced by           -->
 	<!-- its id attribute                                                    -->
@@ -103,7 +102,7 @@
 			</fileset>
 		</copy>
 
-		<filter token="VERSION" value="${version}"/>
+		<filter token="VERSION" value="${pathedit.version}"/>
 		<filter token="DATE" value="${TODAY}"/>
 		<filter token="TIME" value="${TSTAMP}"/>
 		<!-- Copy the Version.txt and a default manifest (TODO: Is this necessary?) -->
@@ -120,7 +119,7 @@
 	<!-- =================================================================== -->
 	<target name="jar" depends="compile">
 		<mkdir dir="${lib.dir}"/>
-		<jar jarfile="${lib.dir}/${name}.jar" basedir="${build.classes}" includes="*/**" manifest="${manifest}"/>
+		<jar jarfile="${lib.dir}/${name}-${pathedit.version}.jar" basedir="${build.classes}" includes="*/**" manifest="${manifest}"/>
 	</target>
 
 	<!-- =================================================================== -->
@@ -131,9 +130,9 @@
 		<copy todir="${bin.dir}">
 			<fileset dir="${src.bin.dir}"/>
 		</copy>
-		<copy todir="${lib.dir}">
+<!--		<copy todir="${lib.dir}">
 			<fileset dir="${src.lib.dir}"/>
-		</copy>
+		</copy>-->
 		<chmod perm="+x">
 			<fileset dir="${bin.dir}">
 				<patternset refid="chmod.patterns"/>
@@ -194,15 +193,15 @@
 	<!-- Packages the distribution with ZIP                                  -->
 	<!-- =================================================================== -->
 	<target name="dist-zip" depends="dist">
-		<zip zipfile="${Name}-${version}.zip" basedir="${pathedit.dist.dir}" includes="**"/>
+		<zip zipfile="${Name}-${pathedit.version}.zip" basedir="${pathedit.dist.dir}" includes="**"/>
 	</target>
 
 	<!-- =================================================================== -->
 	<!-- Packages the distribution with TAR-GZIP                             -->
 	<!-- =================================================================== -->
 	<target name="dist-tgz" depends="dist">
-		<tar tarfile="${Name}-${version}.tar" basedir="${pathedit.dist.dir}" includes="**"/>
-		<gzip zipfile="${Name}-${version}.tar.gz" src="${Name}-${version}.tar"/>
+		<tar tarfile="${Name}-${pathedit.version}.tar" basedir="${pathedit.dist.dir}" includes="**"/>
+		<gzip zipfile="${Name}-${pathedit.version}.tar.gz" src="${Name}-${pathedit.version}.tar"/>
 	</target>
 
 	<target name="dist-all" depends="dist-tgz,dist-zip"/>
@@ -255,9 +254,9 @@
 	<target name="total-clean" depends="clean">
 		<delete dir="${bin.dir}"/>
 		<delete file="${lib.dir}/${name}.jar"/>
-		<delete file="${Name}-${version}.zip"/>
-		<delete file="${Name}-${version}.tar"/>
-		<delete file="${Name}-${version}.tar.gz"/>
+		<delete file="${Name}-${pathedit.version}.zip"/>
+		<delete file="${Name}-${pathedit.version}.tar"/>
+		<delete file="${Name}-${pathedit.version}.tar.gz"/>
 		<delete>
 			<fileset dir="." includes="**/*\~"/>
 		</delete>
