@@ -9,9 +9,12 @@
  */
 package com.hackerdude.devtools.pathedit.ui;
 
-import javax.swing.table.*;
-import java.io.*;
-import com.hackerdude.devtools.pathedit.*;
+import java.io.IOException;
+
+import javax.swing.table.AbstractTableModel;
+
+import com.hackerdude.devtools.pathedit.PathEditFile;
+import com.hackerdude.devtools.pathedit.PathEditLine;
 
 
 public class VariableListTableModel extends AbstractTableModel {

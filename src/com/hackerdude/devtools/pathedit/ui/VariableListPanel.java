@@ -10,10 +10,15 @@
  */
 package com.hackerdude.devtools.pathedit.ui;
 
-import javax.swing.*;
-import javax.swing.event.*;
-import java.awt.*;
-import com.hackerdude.devtools.pathedit.*;
+import java.awt.BorderLayout;
+
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.event.ListSelectionListener;
+
+import com.hackerdude.devtools.pathedit.PathEditFile;
+import com.hackerdude.devtools.pathedit.PathEditList;
 
 public class VariableListPanel extends JPanel {
   BorderLayout borderLayout1 = new BorderLayout();

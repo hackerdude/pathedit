@@ -10,8 +10,10 @@
  */
 package com.hackerdude.devtools.pathedit;
 
-import java.util.*;
 import java.io.File;
+import java.util.Iterator;
+import java.util.StringTokenizer;
+import java.util.Vector;
 
 public class PathEditList {
 

@@ -1,9 +1,11 @@
 package com.hackerdude.devtools.pathedit.ui;
 
-import javax.swing.UIManager;
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+
+import javax.swing.UIManager;
 
 public class PathEdit {
 

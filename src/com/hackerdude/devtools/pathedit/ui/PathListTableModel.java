@@ -9,11 +9,12 @@
  * @version 1.
  */
 package com.hackerdude.devtools.pathedit.ui;
-import com.hackerdude.devtools.pathedit.*;
+import javax.swing.ImageIcon;
+import javax.swing.event.TableModelEvent;
+import javax.swing.table.AbstractTableModel;
 
-import javax.swing.table.*;
-import javax.swing.event.*;
-import javax.swing.*;
+import com.hackerdude.devtools.pathedit.PathEditItem;
+import com.hackerdude.devtools.pathedit.PathEditList;
 
 public class PathListTableModel extends AbstractTableModel {
 

@@ -9,7 +9,7 @@
  */
 package com.hackerdude.devtools.pathedit;
 
-import java.io.*;
+import java.io.File;
 
 public class PathEditItem {
 

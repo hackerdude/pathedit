@@ -9,13 +9,19 @@
  */
 package com.hackerdude.devtools.pathedit.ui;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.table.*;
-import javax.swing.event.*;
+import java.awt.BorderLayout;
+import java.awt.SystemColor;
+
+import javax.swing.BorderFactory;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.event.TableModelEvent;
+import javax.swing.table.TableColumn;
+
 import com.hackerdude.devtools.pathedit.PathEditItem;
-import java.util.*;
 
 public class PathItemListEditor extends JPanel {
   BorderLayout borderLayout1 = new BorderLayout();

@@ -10,13 +10,12 @@
  */
 package com.hackerdude.devtools.pathedit.ui;
 
+import java.awt.BorderLayout;
+
 import javax.swing.JPanel;
-import javax.swing.*;
-import java.awt.event.*;
-import javax.swing.event.*;
-import java.io.*;
-import com.hackerdude.devtools.pathedit.*;
-import java.awt.*;
+import javax.swing.JSplitPane;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 
 public class PathEditFileEditor extends JPanel {
   PathItemListEditor listEditor = new PathItemListEditor();
